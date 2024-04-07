@@ -47,7 +47,7 @@ public class ClienteController {
 	@PostMapping
 	public ResponseEntity<Cliente> save(@RequestBody @Valid Cliente cliente){
 		Cliente clSave = clienteService.save(cliente);
-		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(clSave.getCodigo()).toUri();
+		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}").buildAndExpand(clSave.getCodigo()).toUri();
 		return ResponseEntity.created(uri).body(clSave);
 	}
 	
